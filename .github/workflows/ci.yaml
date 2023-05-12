@@ -52,7 +52,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           body: |
-            Ubuntu 20.04
+            Ubuntu 22.04
             BSP 32.7.3
           files: "jetson*"
         env:
