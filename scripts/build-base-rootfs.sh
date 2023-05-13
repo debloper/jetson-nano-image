@@ -21,9 +21,7 @@ for layer in $(jq -r '.layers[].digest' base/manifest.json | awk -F ':' '{print 
 	tar xvf base/"$layer" --directory=rootfs
 done
 
-echo "nameserver 8.8.8.8" >rootfs/etc/resolv.conf
 rm -rf rootfs/root/.bash_history
-
 rm -rf base
 
 echo "Rootfs created in rootfs directory"

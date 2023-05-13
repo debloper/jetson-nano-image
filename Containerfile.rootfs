@@ -20,6 +20,7 @@ RUN echo "deb http://ports.ubuntu.com/ubuntu-ports/ jammy main" >> /etc/apt/sour
         libcairo2 \
         device-tree-compiler \
         iso-codes \
+        libffi6 \
         libffi7 \
         libncursesw5 \
         libdrm-common \
@@ -82,3 +83,5 @@ RUN useradd \
         -p $(openssl passwd -6 jetson) \
         -s /bin/bash \
         jetson
+
+RUN chown +R jetson:jetson /home/jetson

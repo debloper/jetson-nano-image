@@ -31,23 +31,6 @@ jobs:
           bzip2 -z jetson-nano-300-32.7.3.img
           ls -lht jetson-nano-300-32.7.3.img.bz2
 
-      - name: Build jetson image for Jetson Nano revision 200
-        run: |
-          just build-jetson-image \
-            jetson-nano \
-            200
-          mv jetson.img jetson-nano-200-32.7.3.img
-          bzip2 -z jetson-nano-200-32.7.3.img
-          ls -lht jetson-nano-200-32.7.3.img.bz2
-
-      - name: Build jetson image for Jetson Nano 2GB
-        run: |
-          just build-jetson-image \
-            jetson-nano-2gb
-          mv jetson.img jetson-nano-2gb-32.7.3.img
-          bzip2 -z jetson-nano-2gb-32.7.3.img
-          ls -lht jetson-nano-2gb-32.7.3.img.bz2
-
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
